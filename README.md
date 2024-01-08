@@ -4,9 +4,9 @@
 
 The project utilizes machine learning algorithms and computer vision to recognize hand gestures and voice commands, functioning without additional hardware requirements. The frontend was developed using HTML, CSS, and JS and runs directly on localhost.
 
-![ChatBot Image](https://ibb.co/jg9YnvN)
+![ChatBot Image](docs/images//John%20Bot.png)
 
-![Gesture Image](https://ibb.co/4mhRYz0)
+![Gesture Image](docs/images/Gesture.png)
 
 ## Technologies Used
 
