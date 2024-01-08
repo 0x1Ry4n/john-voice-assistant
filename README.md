@@ -27,3 +27,8 @@ $ conda activate john-env
 $ pip install -r requirements.txt
 $ python app.py
 ```
+
+## Usage
+
+1. Use 'john commands' to list all commands
+2. Speak with the voice assistant to run the commands or type on input chatbot
