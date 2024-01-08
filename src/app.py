@@ -4,6 +4,7 @@ import speech_recognition as sr
 import pynput.keyboard as k
 import time
 import sys
+from controllers.qrcode_scanner import QRCodeScanner
 from controllers.gesture import GestureController
 from controllers.clipboard import ClipBoard
 from controllers.files import FileHandler
@@ -19,7 +20,7 @@ class Bot:
         self.recognizer.energy_threshold = 300
         self.engine = pyttsx3.init("sapi5")
         self.voices = self.engine.getProperty("voices")
-        self.engine.setProperty("voice", self.voices[2].id)
+        self.engine.setProperty("voice", self.voices[1].id)
         self.keyboard = ClipBoard(keyboard=k.Controller())
         self.is_awake = True
         self.enable_weather_answer = True
@@ -158,6 +159,11 @@ class Bot:
         self.reply("Ok")
         chatbot.ChatBot.addAppMsg(file)
 
+    def scan_qrcode(self): 
+        content = QRCodeScanner.scan()
+        self.reply("QRCode scanned successfully")
+        self.reply(f"Opening {content} in browser")
+
     def launch_gesture_recognition(self):
         if GestureController.gc_mode:
             self.reply("Gesture recognition is already active")
@@ -280,6 +286,7 @@ class Bot:
                 "stop gesture recognition": self.stop_gesture_recognition,
                 "location": self.location,
                 "weather": self.weather,
+                "scan qrcode": self.scan_qrcode,
                 "copy": self.copy,
                 "paste": self.paste,
                 "bye": self.bye,
@@ -301,7 +308,7 @@ def main():
         while not chatbot.ChatBot.started:
             time.sleep(0.5)
 
-        bot.wish()
+        # bot.wish()
 
         voice_data = None
 
