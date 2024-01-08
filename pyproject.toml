@@ -1,0 +1,14 @@
+[tool.black]
+target-version = ['py36', 'py37', 'py38']
+include = '\.pyi?$'
+line-length = 88
+exclude = '''
+/(
+  \.toml
+  |\.sh
+  |\.git
+  |\.ini
+  |Dockerfile
+  |Jenkinfile
+)/
+'''
