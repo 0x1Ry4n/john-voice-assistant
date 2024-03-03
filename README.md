@@ -4,8 +4,6 @@
 
 The project utilizes machine learning algorithms and computer vision to recognize hand gestures and voice commands, functioning without additional hardware requirements. The frontend was developed using HTML, CSS, and JS and runs directly on localhost.
 
-![ChatBot Image](docs/images//John%20Bot.png)
-
 ![Gesture Image](docs/images/Gesture.png)
 
 ## Technologies Used
@@ -21,7 +19,7 @@ The project is in its early stages, and some features have not been fully tested
 ## Execution Instructions
 
 1. Clone the repository.
-2. Setup the environment with python greather than the **3.8.5** version
+2. Setup the environment with python in **3.8.5** version
 3. Setup **OPEN_WEATHER_API_TOKEN** on .env file
 4. Run the following commands:
 
@@ -29,6 +27,8 @@ The project is in its early stages, and some features have not been fully tested
 $ conda create --name john-env python=3.8.5
 $ conda activate john-env
 $ pip install -r requirements.txt
+$ conda install pywin32
+$ conda install PyAudio
 $ python app.py
 ```
 
